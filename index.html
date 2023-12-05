@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="./img/330463425_884699595970715_7526633036743200505_n.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2>wuttipong Thong-oon</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Web-Developer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            Khon Kaen, Thailand</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>wuttipong2634@mail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>096-089-5034</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Adobe Photoshop</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:20%">20%</div>
+          </div>
+          <p>HTML</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:45%">
+              <div class="w3-center w3-text-white">45%</div>
+            </div>
+          </div>
+          <p>CSS</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>JavaScript</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:10%"></div>
+          </div>
+          
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i> Lab </h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Enter a number and click OK</b></h5>
+          <input id="id1" type="number" min="100" max="300" required>
+          <button onclick="myFunction()">OK</button>
+          
+          <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+            <p id="demo"></p>
+
+
+
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>หาผลบวก</b></h5>
+          
+          <form id="numberForm">
+            <label for="number1">ป้อนหมายเลขที่ 1</label>
+            <input type="text" id="number1" name="number1" required>
+      
+            <label for="number2">ป้อนหมายเลขที่ 2:</label>
+            <input type="text" id="number2" name="number2" required>
+      
+            <button type="button" onclick="addTwoNumbers()">รวม</button>
+          </form>
+
+          <p id="result"></p>
+
+        
+
+
+        </div>
+
+
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>หาพื่นที่วงกลม</b></h5>
+          <form id="circleForm">
+            <label for="circle">Enter the radius:</label>
+            <input type="text" id="circle" name="circle" required>
+      
+            <button type="button" onclick="calculateCircleArea()">Calculate Area</button>
+          </form>
+      
+          <p id="result2"></p>
+        </div>
+
+
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>แปลงอุณหภูมิ</b></h5>
+          
+          <form id="temperatureForm">
+            <label for="celsius">Enter temperature in Celsius:</label>
+            <input type="text" id="celsius" name="celsius" required>
+      
+            <button type="button" onclick="convertCelsiusToFahrenheit()">Convert</button>
+          </form>
+      
+          <p id="result3"></p>
+
+
+        </div>
+
+
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>  Form Comment</b></h5>
+          
+          <div class="w3-card">
+            <form id="commentForm">
+              <label for="userName">Your Name:</label> <br>
+              <input type="text" id="userName" name="userName" required> <br>
+              
+               
+              <label for="commentText">Comment:</label><br>
+              <textarea id="commentText" name="commentText" required placeholder="text" cols="30" rows="10"></textarea><br>
+             
+        
+              <button type="button" onclick="storeComment()">Submit Comment</button>
+            </form>
+          </div>
+          
+        </div>
+      
+
+
+        </div>
+
+
+
+
+      </div>
+
+      
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100012777965737" target="_blank"> <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i><br>
+  <a href="https://www.google.com/">google</a>
+
+</footer>
+<script>
+function myFunction() {
+  const inpObj = document.getElementById("id1");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("demo").innerHTML = inpObj.validationMessage;
+  } else {
+    document.getElementById("demo").innerHTML = "Input OK";
+  } 
+} 
+
+
+function addTwoNumbers() {
+      // รับค่าเลขจากฟอร์ม
+      let number1 = document.getElementById('number1').value;
+      let number2 = document.getElementById('number2').value;
+
+      // แปลงค่าที่รับมาเป็นตัวเลข
+      number1 = parseFloat(number1);
+      number2 = parseFloat(number2);
+
+      // ตรวจสอบว่าการแปลงสำเร็จหรือไม่
+      if (isNaN(number1) || isNaN(number2)) {
+        document.getElementById('result').textContent = "Invalid input. Please enter valid numbers.";
+      } else {
+        // บวกเลขสองตัว
+        const result = number1 + number2;
+
+        // แสดงผลลัพธ์
+        document.getElementById('result').textContent = `ผลรวมคือ ${result}`;
+      }
+    }
+
+    function calculateCircleArea() {
+      // รับค่ารัศมีจากฟอร์ม
+      let circle = document.getElementById('circle').value;
+
+      // แปลงค่าที่รับมาเป็นตัวเลข
+      circle = parseFloat(circle);
+
+      // ตรวจสอบว่าการแปลงสำเร็จหรือไม่
+      if (isNaN(circle) || circle <= 0) {
+        document.getElementById('result2').textContent = "Invalid input. Please enter a valid positive number.";
+      } else {
+        // คำนวณพื้นที่วงกลม
+        const area = Math.PI * Math.pow(circle, 2);
+
+        // แสดงผลลัพธ์
+        document.getElementById('result2').textContent = `The area of the circle with radius ${circle} is: ${area.toFixed(2)}`;
+      }
+    }
+
+    function convertCelsiusToFahrenheit() {
+      // รับค่าองศาเซลเซียสจากฟอร์ม
+      let celsius = document.getElementById('celsius').value;
+
+      // แปลงค่าที่รับมาเป็นตัวเลข
+      celsius = parseFloat(celsius);
+
+      // ตรวจสอบว่าการแปลงสำเร็จหรือไม่
+      if (isNaN(celsius)) {
+        document.getElementById('result3').textContent = "Invalid input. Please enter a valid number.";
+      } else {
+        // คำนวณแปลงเป็นฟาเรนไฮต์
+        const fahrenheit = (celsius * 9/5) + 32;
+
+        // แสดงผลลัพธ์
+        document.getElementById('result3').textContent = `${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F`;
+      }
+    }
+    function storeComment() {
+      // รับค่าจากฟอร์ม
+      let userName = document.getElementById('userName').value;
+      let commentText = document.getElementById('commentText').value;
+
+      // ตรวจสอบข้อมูลว่าถูกป้อนหรือไม่
+      if (!userName || !commentText) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // สร้าง Object เพื่อเก็บข้อมูล Comment
+      let commentData = {
+        userName: userName,
+        commentText: commentText
+      };
+
+      // ทำบางอย่างกับข้อมูล เช่น บันทึกลงฐานข้อมูล, แสดงผล, ฯลฯ
+      console.log("Stored Comment Data:", commentData);
+
+      // ล้างค่าในฟอร์ม
+      document.getElementById('commentForm').reset();
+    }
+
+
+</script>
+
+</body>
+</html>
