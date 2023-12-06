@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+   
+    <h1>API</h1>
+
+    <hr>
+    <h2>Click to change</h2>
+    <p id="demo2">Hi</p>
+    <button onclick="myFunction()">Click me</button>
+
+    <hr>
+
+
+    <label for="nameInput">Enter Name:</label><br>
+    <input type="text" id="nameInput" placeholder="Enter a name"><br>
+  
+    <button onclick="predictAge()">Predict Age</button>
+  
+    <p id="ageResult"></p>
+
+    <hr>
+
+    
+    <h1>Crypto Prices</h1>
+    <ul id="cryptoList"></ul>
+  
+
+
+    <script>
+
+function myFunction() {
+    fetch("https://catfact.ninja/fact")
+      .then(function(response){
+        return response.json()
+      })
+      .then(function(data){
+        let txt = "";
+          for (let x in data) {
+            txt += data[x] + " ";
+          document.getElementById("demo2").innerHTML = txt;
+          };
+      
+        return data;
+      })  
+      
+ 
+}
+
+
+//--------------------------
+
+async function predictAge() {
+  // Get the input value
+  const name = document.getElementById('nameInput').value;
+
+  // Check if a name is entered
+  if (!name) {
+    alert('Please enter a name.');
+    return;
+  }
+
+  // Fetch age prediction from Agify API
+  try {
+    const response = await fetch(`https://api.agify.io?name=${name}`);
+    const ageData = await response.json();
+
+    // Display the age prediction result
+    const predictedAge = ageData.age;
+    const resultElement = document.getElementById('ageResult');
+    resultElement.textContent = `Predicted Age: ${predictedAge} years old`;
+  } catch (error) {
+    console.error('Error predicting age:', error);
+  }
+}
+
+// Replace 'your_api_key' with your actual API key (if required by the chosen API)
+const apiKey = 'your_api_key'; // Optional: Some APIs require an API key
+
+// Array of cryptocurrencies you want to track
+const cryptocurrencies = ['bitcoin', 'ethereum', 'litecoin'];
+
+function updateCryptoPrices() {
+  // Fetch cryptocurrency prices from the CoinGecko API
+  Promise.all(cryptocurrencies.map(crypto => fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto}&vs_currencies=usd${apiKey ? `&api_key=${apiKey}` : ''}`)))
+    .then(responses => Promise.all(responses.map(response => response.json())))
+    .then(data => {
+      // Update the UI with the latest cryptocurrency prices
+      const cryptoListElement = document.getElementById('cryptoList');
+      cryptoListElement.innerHTML = ''; // Clear previous list items
+
+      data.forEach(cryptoData => {
+        const cryptoName = Object.keys(cryptoData)[0];
+        const cryptoPrice = cryptoData[cryptoName].usd;
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${cryptoName}: $${cryptoPrice}`;
+        cryptoListElement.appendChild(listItem);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching crypto prices:', error);
+    });
+}
+
+// Initial update
+updateCryptoPrices();
+
+// Set interval to update every 30 seconds (adjust as needed)
+setInterval(updateCryptoPrices, 30000);
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
